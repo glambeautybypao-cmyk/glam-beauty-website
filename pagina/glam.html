@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'G Glam Beauty</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #fff5f8, #ffe4ee);
+            color: #333;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #f599d2;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffe4ee;
+        }
+
+        /* HERO */
+
+        .hero {
+
+            padding: 90px 20px;
+
+            background:
+                linear-gradient(rgba(255, 182, 193, 0.75),
+                    rgba(255, 182, 193, 0.75)),
+
+                url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1974&auto=format&fit=crop");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            color: rgb(12, 11, 11);
+        }
+
+        .contenedor {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        .columna {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .izquierda {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+
+        .izquierda p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .derecha p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        /* LOGO HERO */
+
+        .logo-hero {
+
+            width: 250px;
+
+            margin-top: 20px;
+            margin-bottom: 25px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.3);
+
+            padding: 10px;
+
+            box-shadow:
+                0 0 15px #ff69b4,
+                0 0 30px #ffc0cb,
+                0 0 45px #ffd700;
+
+            transition: 0.4s;
+        }
+
+        .logo-hero:hover {
+
+            transform: scale(1.05) rotate(2deg);
+
+            box-shadow:
+                0 0 20px #ff69b4,
+                0 0 40px #ffc0cb,
+                0 0 60px #ffd700;
+        }
+
+        .derecha {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+        }
+
+        .derecha h3 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .derecha p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .foto-artista {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+
+            border: 5px solid white;
+
+            box-shadow:
+                0 0 15px #ff69b4,
+                0 0 30px #ffb6c1,
+                0 0 45px #ffc0cb;
+
+            transition: 0.4s;
+        }
+
+        .foto-artista:hover {
+            transform: scale(1.05);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 28px;
+            background: white;
+            color: #ff69b4;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            background: #ff69b4;
+            color: white;
+
+            box-shadow:
+                0 0 15px #ff69b4,
+                0 0 30px #ffb6c1;
+        }
+
+        /* SECCIONES */
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #ff69b4;
+            font-size: 40px;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 0 15px #ff69b4,
+                0 0 30px #ffc0cb;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #ff69b4;
+        }
+
+        .card h4,
+        .card h5 {
+            margin-top: 10px;
+        }
+
+        /* GALERIA */
+
+        .galeria {
+            column-count: 3;
+            column-gap: 20px;
+
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .galeria img {
+            width: 100%;
+            margin-bottom: 20px;
+
+            border-radius: 30px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+            transition: 0.4s;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.03);
+
+            box-shadow:
+                0 0 15px #ff69b4,
+                0 0 25px #ffb6c1,
+                0 0 40px #ffc0cb;
+        }
+
+        /* CONTACTO */
+
+        .contacto {
+            background: #ffb6c1;
+            color: rgb(17, 17, 17);
+        }
+
+        .contacto p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            .contenedor {
+                flex-direction: column;
+            }
+
+            .galeria {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .galeria {
+                column-count: 1;
+            }
+
+            .derecha h3 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            .logo-hero {
+                width: 180px;
+            }
+
+            .foto-artista {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>D'G Glam Beauty</h1>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+        <div class="contenedor">
+
+            <!-- COLUMNA IZQUIERDA -->
+
+            <div class="columna izquierda">
+
+                <h2> Bienvenidas a D'G Glam Beauty </h2>
+
+                <p>
+                    Brindamos servicios integrales de belleza especializados
+                    en uñas, ofreciendo atención personalizada,
+                    productos de calidad y técnicas innovadoras que resalten la
+                    imagen y confianza de cada cliente.
+                </p>
+
+                <p>
+                    D'G Glam Beauty by Pao: glamour en cada detalle.
+                </p>
+
+                <!-- LOGO -->
+
+                <img src="logo/logo.png" alt="Logo D'G Glam Beauty" class="logo-hero">
+
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+
+            <div class="columna derecha">
+
+                <h2>Nails Artist</h2>
+
+                <p>
+                    Hola, soy Denis Paola Peña Cortes, especialista en uñas y belleza.
+                    Me apasiona resaltar la belleza de cada cliente con diseños únicos,
+                    atención personalizada y trabajos de alta calidad.
+                </p>
+
+                <p>
+                    Mi objetivo es que te sientas cómoda, segura y feliz
+                    con cada detalle de tus uñas.
+                </p>
+
+                <img src="logo/denis.jpeg" alt="Denis Paola" class="foto-artista">
+
+                <br>
+                
+                <a href="https://calendar.app.google/JPVrkMcKWmtZbWRz7" class="btn" target="_blank">
+                    Reservar Cita
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SERVICIOS -->
+
+<section id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Uñas Acrílicas</h3>
+            <p>Extensiones clásicas y resistentes, personalizadas en
+                largo y diseño para lucir manos impecables.</p>
+            <h4>$70.000</h4>
+            <p>su precio varia segun diseño y largo.</p>
+            <p>Duración: 2h 20min </p>
+        </div>
+
+        <div class="card">
+            <h3>Esmaltado Semipermanente</h3>
+            <p>Servicio ideal para lucir uñas brillantes, elegantes
+                y perfectas por más tiempo. Se aplica esmalte en gel de alta
+                duración con secado en lámpara, logrando un acabado impecable,
+                resistente y de larga duración.</p>
+            <h4>$40.000</h4>
+            <h5>Duración: 1h 40min</h5>
+        </div>
+
+        <div class="card">
+            <h3>Pedicure tradicional</h3>
+            <p>Tratamiento básico para el cuidado de los pies que incluye
+                limpieza, corte y limado de uñas, arreglo de cutículas,
+                exfoliación suave, hidratación y aplicación de esmalte normal.
+                Su duración suele ser de pocos días.</p>
+            <h4>$15.000</h4>
+            <h5>Duración: 30min</h5>
+        </div>
+
+
+        <div class="card">
+            <h3>Pedicure Semipermanente</h3>
+            <p>Incluye el mismo cuidado básico del pedicure tradicional, pero
+                se aplica esmalte en gel que se seca con lámpara UV o
+                LED. Ofrece mayor brillo y duración, manteniéndose perfecto entre
+                2 y 4 semanas.</p>
+            <h4>$20.000</h4>
+            <h5>Duración: 30min</h5>
+        </div>
+
+        <div class="card">
+            <h3>Dipping</h3>
+            <p>Técnica que fortalece la uña natural mediante capas de polvo
+                acrílico, brindando un acabado resistente, natural y duradero.</p>
+            <h4>$50.000</h4>
+            <h5>Duración: 1h 40min</h5>
+        </div>
+
+        <div class="card">
+            <h3>Kapping de Acrilico</h3>
+            <p>Capa protectora en acrílico sobre la uña natural que aporta
+                firmeza, evitando quiebres y ayudando al crecimiento.</p>
+            <h4>$50.000</h4>
+            <p>su precio varia dependiendo del diseño y largo</p>
+            <h5>Duración: 2h </h5>
+        </div>
+
+        <div class="card">
+            <h3>Kapping de Poligel</h3>
+            <p>Refuerzo ligero y resistente sobre la uña natural, ideal
+                para mayor protección con acabado elegante.</p>
+            <h4>$60.000</h4>
+            <p>su precio varia dependiendo del diseño y largo</p>
+            <h5>Duración: 2h </h5>
+        </div>
+
+        <div class="card">
+            <h3>Poligel</h3>
+            <p>Sistema innovador que combina resistencia y ligereza, perfecto
+                para extensiones naturales y duraderas.</p>
+            <h4>$60.000</h4>
+            <p>su precio varia dependiendo del diseño y largo</p>
+            <h5>Duración: 2h 30min</h5>
+        </div>
+
+        <div class="card">
+            <h3>Soft gel</h3>
+            <p>Extensiones modernas con tips en gel que ofrecen un acabado fino,
+                natural y cómodo.</p>
+            <h4>$60.000</h4>
+            <h5>Duración: 1h 50min</h5>
+        </div>
+
+        <div class="card">
+            <h3>Base Rubber </h3>
+            <p>Base flexible y autonivelante que fortalece uñas débiles
+                o quebradizas, mejorando su apariencia y duración.</p>
+            <h4>$50.000</h4>
+            <h5>Duración: 1h 20min </h5>
+        </div>
+
+        <div class="card">
+            <h3>Retoque de acrílico/ poligel/ soft gel</h3>
+            <p>Mantenimiento del crecimiento de la uña para conservar
+                el diseño y acabado como nuevo.</p>
+            <h4>$60.000</h4>
+            <h5>Duración: 2h 5min/2h/1h 40min </h5>
+        </div>
+
+        <div class="card">
+            <h3>Retiro de acrílico y poligel</h3>
+            <p>Remoción segura del sistema, cuidando la salud de la
+                uña natural.</p>
+            <h4>$15.000</h4>
+            <h5>Duración: 15min </h5>
+        </div>
+
+
+        <div class="card">
+            <h3>Retiro + set nuevo de soft gel</h3>
+            <p>Retiro completo del sistema anterior y aplicación de un
+                nuevo set con acabado impecable.</p>
+            <h4>$70.000</h4>
+            <h5>Duración: 1h 55min </h5>
+        </div>
+
+        <div class="card">
+            <h3>Retiro + Kapping de poligel</h3>
+            <p>Cambio de sistema con refuerzo en poligel para mayor
+                resistencia y durabilidad.</p>
+            <h4>$75.000</h4>
+            <h5>Duración: 2h </h5>
+        </div>
+
+        <div class="card">
+            <h3>Retiro + aplicación nueva de esmaltado o base rubber</h3>
+            <p>Retiro del sistema anterior y aplicación de esmaltado
+                o base rubber para renovar tus uñas.</p>
+            <h4>$60.000</h4>
+            <h5>Duración: 30min</h5>
+        </div>
+
+        <div class="card">
+            <h3>Retiros + set nuevo de acrílico</h3>
+            <p>Eliminación del sistema anterior y creación de un nuevo set
+                acrílico personalizado.</p>
+            <h4>$85.000</h4>
+            <h5>Duración:2h 50min</h5>
+        </div>
+
+
+    </div>
+</section>
+
+
+    <!-- GALERIA -->
+
+    <section id="galeria">
+
+        <h2>Galería</h2>
+
+        <div class="galeria">
+
+            <img src="img uñas/1.jpeg" alt="Uñas 1">
+            <img src="img uñas/2.jpeg" alt="Uñas 2">
+            <img src="img uñas/3.jpeg" alt="Uñas 3">
+            <img src="img uñas/4.jpeg" alt="Uñas 4">
+            <img src="img uñas/5.jpeg" alt="Uñas 5">
+            <img src="img uñas/6.jpeg" alt="Uñas 6">
+            <img src="img uñas/7.jpeg" alt="Uñas 7">
+            <img src="img uñas/8.jpeg" alt="Uñas 8">
+            <img src="img uñas/9.jpeg" alt="Uñas 9">
+            <img src="img uñas/10.jpeg" alt="Uñas 10">
+            <img src="img uñas/11.jpeg" alt="Uñas 11">
+            <img src="img uñas/13.jpeg" alt="Uñas 13">
+            <img src="img uñas/14.jpeg" alt="Uñas 14">
+            <img src="img uñas/15.jpeg" alt="Uñas 15">
+            <img src="img uñas/16.jpeg" alt="Uñas 16">
+            <img src="img uñas/18.jpeg" alt="Uñas 18">
+            <img src="img uñas/17.jpeg" alt="Uñas 17">
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section class="contacto" id="contacto">
+
+        <h2>Contáctanos</h2>
+
+        <p>📍 Galapa, Atlántico</p>
+        <p>Barrio 12 de Septiembre calle 14a #28a-30</p>
+
+        <p>📞 +57 304 283 4393</p>
+
+        <p>📷 Instagram: @dg.glambeauty</p>
+        <p>📷 Facebook: D'G Glam Beauty by Pao</p>
+        <p>✉️ Correo: dg.glambeauty@gmail.com</p>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 D'G Glam Beauty - Todos los derechos reservados
+    </footer>
+
+</body>
+
+</html>
